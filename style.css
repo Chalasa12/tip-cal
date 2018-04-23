@@ -1,0 +1,133 @@
+#container {
+  height: 500px;
+  width: 250px;
+  margin: 100px auto;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+  border-radius: 10px !important;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+h1 {
+  background: #0E4E92;
+  color: white;
+  margin: 0;
+  text-align:center;
+  padding: 5px 0px 5px 0px;
+  font-size: 24px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.billtippeople{
+  padding-left: 5px;
+  color:gray;
+  margin-top:5px;
+  font-size:13px
+}
+
+input {
+  padding-left: 20px;
+}
+
+#billamt {
+  font-size: 18px;
+  color: #red;
+  background-color: #f7f7f7;
+  width: 96%;
+  margin-left:5px;
+  margin-bottom:5px;
+  text-align:center;
+}
+
+#billamt:focus {
+  background: #fff;
+  border: 3px solid #2980b9;
+  outline: none;
+}
+
+.dollarSign {
+      font-size:30px;
+    font-weight:bold;
+}
+
+button {
+text-align:center;
+  font-weight: bold !important;
+  margin: auto;
+  background: #C0C0C0 ;
+  border-radius: 5px;
+  width: auto;
+  height: 41px;
+  font-size: 20px !important;
+  color: white
+  font-color: black;
+}
+
+.tipinput{
+    height:41px;
+    width:90%;
+    text-align:center;
+    font-size:20px;
+    font-color:black;
+}
+
+button:hover {
+  background: #4c2827;
+  border-bottom-color: #111;
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+#totalTip {
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom:-5px;
+}
+#calculator{
+    padding-top:5px;
+    height:230px;
+    margin-bottom:-20px;
+}
+.tipcalcwords{
+text-align:left;
+}
+.tipheaders{
+padding-left:5px;
+color:black;
+font-size:24px;
+
+}
+.dollaramounts{
+float:right;
+}
+.perperson{
+  padding-left: 5px;
+  color:gray;
+  font-size:13px
+}
+.plusMinusDivs{
+    padding:0px 5px 0px 5px;
+}
+.fullamt{
+    text-align: center;
+     font-size: 30px;
+     color:black;
+     padding-top:10px;
+margin-bottom:-10px;
+}
+.fullamt2{
+    text-align: center;
+     font-size: 50px;
+     color:black;
+     font-weight:bold;
+     margin-top:-10px;
+}
+.totalperperson{
+    font-size:30px;
+    font-weight:bold;
+    padding-right:10px;
+}

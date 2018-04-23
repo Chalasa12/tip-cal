@@ -2,182 +2,58 @@
 <head>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-<style type ="text/css">
-
-
-#container {
-  height: 525px;
-  width: 250px;
-  margin: 100px auto;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
-  border-radius: 10px !important;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-}
-
-h1 {
-  background: #0E4E92;
-  color: white;
-  margin: 0;
-  text-align:center;
-  padding: 5px 0px 5px 0px;
-  font-size: 24px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.billtippeople{
-  padding-left: 5px;
-  color:gray;
-  margin-top:5px;
-  font-size:13px
-}
-
-
-input {
-  padding-left: 20px;
-}
-
-#billamt {
-  font-size: 18px;
-  color: #red;
-  background-color: #f7f7f7;
-  width: 96%;
-  
-  margin-left:5px;
-  margin-bottom:5px;
-  text-align:center;
-
-}
-
-#billamt:focus {
-  background: #fff;
-  border: 3px solid #2980b9;
-  outline: none;
-}
-
-#peopleamt {
-  width: 60%;
-  padding: 5px 5px 8px 8px;
-  margin-left: 20px;
-  color: #red;
-  background-color: #f7f7f7;
-  font-size: 14px;
-}
-
-.dollarSign {
-  display: inline;
-}
-
-#serviceQual {
-  padding: 13px 13px 20px 20px;
-  margin-left: 20px;
-  font-size: 25px;
-}
-
-button {
-  text-transform: uppercase;
-  font-weight: bold;
-  display: block;
-  margin: 30px auto;
-  background: #AD133A;
-  border-radius: 5px;
-  width: 200px;
-  height: 50px;
-  font-size: 17px;
-  color: white;
-}
-
-button:hover {
-  background: #4c2827;
-  border-bottom-color: #111;
-}
-
-button:active {
-  position: relative;
-  top: 1px;
-}
-
-#totalTip {
-  font-size: 30px;
-  margin-top: 5px;
-
-}
-
-#totalTip:before {
-  font-size: 20px;
-  font-weight: bold;
-  display: block;
-  text-transform: uppercase;
-}
-
-#totalTip sup {
-  font-size: 20px;
-  top: -18px;
-}
-
-#totalTip small {
-  font-size: 20px;
-  font-weight: bold;
-  display: block;
-  }
-.tipcalcwords{
-text-align:left;
-}
-.tipheaders{
-color:black;
-font-size:18px;
-
-}
-.perperson{
-  padding-left: 5px;
-  color:gray;
-
-  font-size:13px
-
-}
-</style>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="scripts.js"></script>
 </head>
 <body>
 <div id="container">
   <h1>Tip Calculator</h1>
   <div id="calculator">
-
-
-
       <span class="billtippeople">Bill
         </span>
          <input id="billamt" class="form-control" type="text" placeholder="$">
-
           <span class="billtippeople">Tip %</span>
-		  <input id="billamt" class="form-control" type="text" placeholder="$">
-           
+<div class="input-group mb-3 plusMinusDivs">
+  <div class="input-group-prepend">
+    <button id="tipminusbtn"class="btn" type="button">-</button>
+  </div>
+  <input id="tipinputtext" type="text" class="form-control tipinput" placeholder="Tip %" aria-label="" aria-describedby="basic-addon1" value ="5%">
+    <div class="input-group-append">
+    <button id="tipplusbtn" value="5" class="btn" type="button">+</button>
+  </div>
+</div>
 
     <span class="billtippeople">Number of people<span>
 	
-   <input id="billamt" class="form-control" type="text" placeholder="Number of People">
-
-
+<div class="input-group mb-3 plusMinusDivs">
+  <div class="input-group-prepend">
+    <button id="groupminusbtn" value="1"class="btn" type="button">-</button>
+  </div>
+  <input type="text" id="groupinput"class="form-control tipinput" placeholder="Party #" aria-label="" aria-describedby="basic-addon1" value="1">
+    <div class="input-group-append">
+    <button id="groupplusbtn" value="1"class="btn" type="button">+</button>
+  </div>
+</div>
   </div>
   <!--calculator end-->
   <div id="totalTip">
-<span class="tipcalcwords tipheaders">Tip</span> <span></span>
-<span class="perperson">per person<span>
+<span class="tipcalcwords tipheaders">Tip<span  id="tipperperson" class="dollaramounts" style="padding-right:10px;">0.00</span><span class="dollaramounts">$</span></span>
   </div>
+  <span class="perperson">per person<span>
     <div id="totalTip">
-<span class="tipcalcwords tipheaders">Total</span> <span></span>
-<span class="perperson">per person<span>
+<span class="tipcalcwords tipheaders">Total<span id="totalperperson" class="dollaramounts totalperperson">0.00</span><span class="dollaramounts dollarSign">$</span></span>
   </div>
-      <div id="totalTip">
-<span class="tipcalcwords tipheaders">Full Amount </span> <span></span>
-<span class="perperson">$$<span>
-  </div>
-  <!--totalTip end-->
+  <span class="perperson">per person<span>
+      <div id="totalTip fullamt">
+<p class="fullamt">Full Amount </p> 
+<p class="fullamt2">$0.00</p>
 
+  </div>
 </div>
-<!--container end-->
-
-<script type="text/javascript" src="tipcalculator.js"></script>
 </body>
 </html>
 

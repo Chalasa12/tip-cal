@@ -24,7 +24,9 @@ $("#billamt").change(function(){
 
 })
 function updateTipAmounts(){
-    var billAmt= $("#billamt").val();
+	if($("#billamt").val()[0]=="$"){
+	var billAmt= $("#billamt").val().slice(1);
+	}else{var billAmt= $("#billamt").val();}
     var billVal= parseFloat(billAmt);
     var tip= $("#tipinputtext").val().slice(0,-1);
     var tipVal= parseFloat(tip);
